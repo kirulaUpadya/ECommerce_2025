@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
   @include('admin.header')
 
   @include('admin.sidebar')
