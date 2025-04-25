@@ -10,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav  ">
+      <ul class="navbar-nav ">
         <li class="nav-item active">
           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
         </li>
@@ -34,6 +34,23 @@
         </li>
       </ul>
       <div class="user_option">
+
+        @if (Route::has('login'))
+
+        @auth
+
+        <a href="">
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        </a>
+
+        <form style="padding: 15px;" method="POST" action="{{ route('logout') }}">
+          @csrf
+
+          <input class="btn btn-primary" type="submit" value="Logout">
+        </form>
+
+        @else
+
         <a href="{{url('/login')}}">
           <i class="fa fa-user" aria-hidden="true"></i>
           <span>
@@ -46,14 +63,11 @@
             Register
           </span>
         </a>
-        <a href="">
-          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-        </a>
-        <form class="form-inline ">
-          <button class="btn nav_search-btn" type="submit">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
+
+        @endauth
+
+        @endif
+
       </div>
     </div>
   </nav>
