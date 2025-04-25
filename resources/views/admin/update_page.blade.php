@@ -38,7 +38,7 @@
     <div class="page-header">
       <div class="container-fluid">
 
-        <h2>Update Product</h2>
+        <h2 class="div_deg" style="padding: 15px;">Update Product</h2>
 
         <div class="div_deg">
 
