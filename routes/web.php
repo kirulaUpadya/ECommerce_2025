@@ -69,3 +69,11 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::post('stripe/{value}', 'stripePost')->name('stripe.post');
 });
+
+route::get('shop', [HomeController::class, 'shop'])->middleware(['auth', 'verified']);
+
+route::get('why', [HomeController::class, 'why'])->middleware(['auth', 'verified']);
+
+route::get('testimonial', [HomeController::class, 'testimonial'])->middleware(['auth', 'verified']);
+
+route::get('contact', [HomeController::class, 'contact'])->middleware(['auth', 'verified']);
